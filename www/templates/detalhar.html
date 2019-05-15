@@ -1,0 +1,55 @@
+<ion-view view-title="{{pagina}}">
+	
+	<ion-content>
+		<div class="list card">
+			<div class="item">
+				<h1>{{item.titulo}}</h1>
+			</div>
+			<div class="item item-body">
+				<img src="{{item.imagem}}" alt="" width= "100%">
+				<h3>{{item.descricao}}</h3>
+				<h2>Preço: {{item.preco | currency: "R$"}}</h2>
+			</div>
+		</div>
+
+		<button class="button button-calm button-full" ng-click="abreModalAdicionar()">Incluir na Compra</button>
+
+		<!-- Modal adicionar produto no carrinho -->
+		<script id="modal-adicionar-produto.html" type="text/ng-template">
+			<ion-modal-view>
+
+				<ion-header-bar align-title="center" class="bar-calm">
+					<h2 class="title">{{item.titulo}}</h2>
+				</ion-header-bar>
+
+				<ion-content>
+					<div class="list">
+						<label class="item item-input item-stacked-label">
+							<span class="input-label">Informe a Quantidade</span>
+							<input type="number" min="1" max="100" ng-model="input.quant" class="input-number">
+						</label>
+					</div>
+
+					<div class="card">
+						<ion-item class="item item-image">
+							<img src="{{item.imagem}}" alt="">
+						</ion-item>
+					</div>
+
+					<div class="row">
+						<div class="col-50">
+							<button class="button icon-right ion-plus-round button-calm button-full" ng-click="adicionar()">Adicionar</button>
+						</div>
+						<div class="col-50">
+							<button class="button icon-right ion-close-round button-energized button-full" ng-click="fechaModalAdicionar()">Cancelar</button>
+						</div>
+					</div>
+
+				</ion-content>
+
+			</ion-modal-view>
+		</script>
+		<!-- /Modal adicionar produto no carrinho -->
+
+	</ion-content>
+</ion-view>

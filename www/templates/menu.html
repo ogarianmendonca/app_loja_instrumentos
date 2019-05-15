@@ -1,0 +1,168 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-cart-outline" ng-click="abreModalCarrinho()">
+          <span class="badge badge-assertive">{{carrinho.length}}</span>
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-calm">
+      <h2 class="title">Menu</h2>
+    </ion-header-bar>
+
+    <ion-content>
+      <ion-list>
+
+        <ion-item menu-close href="#/app/instrumentos" class="item item-avatar">
+          <img src="img/categorias/instrumentos.jpg" alt="">
+          <h2 class="h2-menu">Instrumentos</h2>
+          <p class="p-white">Corda, Percussão</p>
+        </ion-item>
+
+        <ion-item menu-close href="#/app/acessorios" class="item item-avatar">
+          <img src="img/categorias/acessorios.jpg" alt="">
+          <h2 class="h2-menu">Acessórios</h2>
+          <p class="p-white">Capas, Pedais e Efeitos</p>
+        </ion-item>
+
+        <ion-item menu-close href="#/app/amplificadores" class="item item-avatar">
+          <img src="img/categorias/amplificadores.jpg" alt="">
+          <h2 class="h2-menu">Amplificadores</h2>
+          <p class="p-white">Cubos, Cabeçote</p>
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/finalizar" ng-click="calcularConta()">
+          <p class="p-menu p-white"><i class="icon ion-social-usd"></i>Finalizar Compra</p>
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/browse">
+          <p class="p-menu p-white"><i class="icon ion-ios-home"></i>Tela Inicial</p>
+        </ion-item>
+
+      </ion-list>
+
+      <!-- Modal Carrinho -->
+      <script id="carrinho.html" type="text/ng-template">
+        <ion-modal-view>
+
+          <ion-header-bar align-title="center" class="bar-calm">
+            <h1 class="title">Carrinho de Compras</h1>
+          </ion-header-bar>
+
+          <ion-content>
+            <div class="row">
+              <div class="col">
+                <h2 class="h2-carr">Item</h2>
+              </div>
+              <div class="col">
+                <h2 class="h2-carr">QTD</h2>
+              </div>
+              <div class="col">
+                <h2 class="h2-carr">Valor</h2>
+              </div>
+              <div class="col">
+                <h2 class="h2-carr">
+                  <i class="icon ion-arrow-down-b"></i>
+                </h2>
+              </div>
+            </div>
+
+            <ion-list ng-repeat="prod in carrinho">
+              <ion-radio ng-value="carrinho.indexOf(prod)" ng-model="data.item">
+                <div class="row">
+                  <div class="col">
+                    {{prod.item.titulo}}
+                  </div>
+                  <div class="col">
+                    {{prod.quantidade}}
+                  </div>
+                  <div class="col">
+                    {{prod.item.preco * prod.quantidade | currency: "R$"}}
+                  </div>
+                </div>
+              </ion-radio>
+            </ion-list>
+          </ion-content>
+
+          <ion-footer-bar class="bar bar-footer">
+            <div class="button-bar">
+              <button class="button button-calm" ng-click="fecharCompra()">
+                <i class="icon ion-checkmark-round"></i>
+              </button>
+
+              <button class="button button-energized" ng-click="editarItem()">
+                <i class="icon ion-edit"></i>
+              </button>
+
+              <button class="button button-dark" ng-click="removerItem()">
+                <i class="icon ion-trash-b"></i>
+              </button>
+
+              <button class="button button-assertive" ng-click="fechaModalCarrinho()">
+                <i class="icon ion-ios-undo"></i>
+              </button>
+            </div>            
+          </ion-footer-bar>
+
+      </ion-modal-view>
+    </script>
+    <!-- /Modal Carrinho -->
+
+    <!-- Modal editar item -->
+    <script id="modal-editar-item.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-calm">
+          <h1 class="title">Editar Quantidade</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="card">
+            <div class="item">
+              <h2>Informe a quantidade e confirme</h2>
+              <div class="list">
+                <label class="item item-input item-input-wrapper">
+                  <input type="number" min="1" max="100" ng-model="input.quant"> 
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row buttons-grup">
+            <div class="col-50">
+              <button class="button button-calm button-full" ng-click="confirmarEdicao()">
+                Confirmar
+              </button>
+            </div>
+
+            <div class="col-50">
+              <button class="button button-assertive button-full" ng-click="cancelarEdicao()">
+                Cancelar
+              </button> 
+            </div>
+          </div>
+
+        </ion-content>
+
+      </ion-modal-view>
+    </script>
+    <!-- /Modal editar item -->
+
+  </ion-content>
+
+</ion-side-menu>
+</ion-side-menus>

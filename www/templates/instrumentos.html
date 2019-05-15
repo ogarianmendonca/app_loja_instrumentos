@@ -1,0 +1,16 @@
+<ion-view view-title="{{pagina}}">
+	
+	<ion-content>
+
+		<ion-list>
+			<ion-item ng-repeat="instrumento in instrumentos" href="#/app/detalhar/{{instrumento.id}}" class="item item-thumbnail-left item-icon-right">
+				<img src="{{instrumento.imagem}}" alt="" class="img-lista">
+				<i class="icon ion-chevron-right icone-add"></i>
+				<h2 class="h2-menu">{{instrumento.titulo}}</h2>
+				<p class="p-menu p-white">{{instrumento.preco | currency: "R$"}}</p>
+			</ion-item>
+		</ion-list>
+		
+	</ion-content>
+
+</ion-view>
