@@ -1,3 +1,3 @@
 # app_loja_instrumentos
 
-Projeto livre - aplicativo mobile com Ionic v1
+Projeto Livre - aplicativo mobile com Ionic v1
