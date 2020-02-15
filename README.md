@@ -1,3 +1,3 @@
 # app_loja_instrumentos
 
-Aplicativo Ionic Framework - (simples) Loja de Instrumentos
+Projeto livre - aplicativo mobile com Ionic v1
