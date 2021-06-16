@@ -1,8 +1,8 @@
 <ion-view view-title="{{pagina}}">
-	
 	<ion-content>
 		<ion-list>
-			<ion-item ng-repeat="amplificador in amplificadores" href="#/app/detalhar/{{amplificador.id}}" class="item item-thumbnail-left item-icon-right">
+			<ion-item ng-repeat="amplificador in amplificadores" href="#/app/detalhar/{{amplificador.id}}"
+				class="item item-thumbnail-left item-icon-right">
 				<img src="{{amplificador.imagem}}" alt="" class="img-lista">
 				<i class="icon ion-plus-round icone-add"></i>
 				<h2 class="h2-menu">{{amplificador.titulo}}</h2>
@@ -10,5 +10,4 @@
 			</ion-item>
 		</ion-list>
 	</ion-content>
-
 </ion-view>

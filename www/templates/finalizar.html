@@ -1,38 +1,38 @@
 <ion-view view-title="{{pagina}}">
-	
 	<ion-content>
 		<br>
 		<div class="text-center">
-            <h3 class="h2-menu">Escolha a opção de pagamento</h3>
-        </div>
-        <div class="row">
-            <h4 class="p-white">Total: {{conta.total | currency: "R$"}}</h4>
-        </div>
-        <div class="row">
-            <h4 class="p-white">Desconto a vista (-10%): {{conta.porcentagem | currency: "R$"}}</h4>
-        </div>
-        <div class="row">
-            <h4 class="p-white">Subtotal: {{conta.subtotal | currency: "R$"}}</h4>
-        </div>
-        <div class="row">
-            <div class="col item-input">
-                <div class="list">
+			<h3 class="h2-menu">Escolha a opção de pagamento</h3>
+		</div>
+		<div class="row">
+			<h4 class="p-white">Total: {{conta.total | currency: "R$"}}</h4>
+		</div>
+		<div class="row">
+			<h4 class="p-white">Desconto a vista (-10%): {{conta.porcentagem | currency: "R$"}}</h4>
+		</div>
+		<div class="row">
+			<h4 class="p-white">Subtotal: {{conta.subtotal | currency: "R$"}}</h4>
+		</div>
+		<div class="row">
+			<div class="col item-input">
+				<div class="list">
 					<label class="item item-input item-stacked-label">
-						<span class="input-label">Para pagamento com cartão de crédito,<br> informe abaixo a quantidade de parcelas</span>
-						<input type="number" min="1" max="100" ng-model="conta.quantidadeParcelas"> 
+						<span class="input-label">Para pagamento com cartão de crédito,<br> informe abaixo a quantidade
+							de parcelas</span>
+						<input type="number" min="1" max="100" ng-model="conta.quantidadeParcelas">
 					</label>
 				</div>
-            </div>           
-        </div>
-        <div class="row">
-            <div class="col col-50">
-                <h3 class="p-white">Valor de cada parcela:</h3>
-            </div>
-            <div class="col col-50">
-                <h3 class="p-white">{{conta.total / conta.quantidadeParcelas | currency: "R$"}}</h3>
-            </div>
-        </div>
-		
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-50">
+				<h3 class="p-white">Valor de cada parcela:</h3>
+			</div>
+			<div class="col col-50">
+				<h3 class="p-white">{{conta.total / conta.quantidadeParcelas | currency: "R$"}}</h3>
+			</div>
+		</div>
+
 		<!-- Modal Finalizar Compra pagar a vista-->
 		<script id="modal-finalizar-compra.html" type="text/ng-template">
 			<ion-modal-view>
@@ -68,25 +68,24 @@
 				</ion-content>
 			</ion-modal-view>
 		</script>
-		<!-- /Modal Finalizar Compra pagar a vista-->	
+		<!-- /Modal Finalizar Compra pagar a vista-->
 
 		<div class="row">
 			<div class="col-33">
-				<button class="button button-calm button-full" ng-click="pagarParcelado()" >
-	                Parcelado
-	            </button>
+				<button class="button button-calm button-full" ng-click="pagarParcelado()">
+					Parcelado
+				</button>
 			</div>
 			<div class="col-33">
-				 <button class="button button-balanced button-full" ng-click="modalFinalizarCompra.show()">
-	                À vista
-	            </button>
+				<button class="button button-balanced button-full" ng-click="modalFinalizarCompra.show()">
+					À vista
+				</button>
 			</div>
 			<div class="col-33">
 				<button class="button button-assertive button-full" ng-click="cancelarCompra()">
-	                Cancelar
-	            </button>
+					Cancelar
+				</button>
 			</div>
 		</div>
-
 	</ion-content>
 </ion-view>

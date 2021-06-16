@@ -1,12 +1,11 @@
 <ion-view view-title="{{pagina}}">
-	
 	<ion-content>
 		<div class="list card">
 			<div class="item">
 				<h1>{{item.titulo}}</h1>
 			</div>
 			<div class="item item-body">
-				<img src="{{item.imagem}}" alt="" width= "100%">
+				<img src="{{item.imagem}}" alt="" width="100%">
 				<h3>{{item.descricao}}</h3>
 				<h2>Preço: {{item.preco | currency: "R$"}}</h2>
 			</div>
@@ -17,7 +16,6 @@
 		<!-- Modal adicionar produto no carrinho -->
 		<script id="modal-adicionar-produto.html" type="text/ng-template">
 			<ion-modal-view>
-
 				<ion-header-bar align-title="center" class="bar-calm">
 					<h2 class="title">{{item.titulo}}</h2>
 				</ion-header-bar>
@@ -44,12 +42,9 @@
 							<button class="button icon-right ion-close-round button-energized button-full" ng-click="fechaModalAdicionar()">Cancelar</button>
 						</div>
 					</div>
-
 				</ion-content>
-
 			</ion-modal-view>
 		</script>
 		<!-- /Modal adicionar produto no carrinho -->
-
 	</ion-content>
 </ion-view>
